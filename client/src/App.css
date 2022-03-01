@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  overflow: auto;
+  background-color: #8fb0b0;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png");
+}
+
+.text_container {
+  height: 300px;
+  width: 100%;
+  background-color: #8fb0b0;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonal-striped-brick.png");
+  margin-top: 120px;
+}
+
+.nav {
+  height: 120px;
+  width: 100%;
+  background-color: #589393;
+  color: #ffff;
+  padding: 1.5em;
+  font-family: "Bungee", cursive;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+.left {
+  width: 30%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.right {
+  width: 70%;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: flex-end;
+  padding-right: 15px;
+  font-size: 20px;
+}
+.tweet-text {
+  width: 70%;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  border-bottom: 4px solid #5e6572;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 3em;
+}
+.nav-tweet-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+.nav-tweet-text:hover {
+  cursor: pointer;
+  color: rgb(157, 243, 229);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+}
+
+.posts_container {
+  width: 80%;
+  margin: auto;
+  padding-top: 2em;
+}
+.post {
+  border-left: 2px solid rgb(2, 63, 31);
+  margin-bottom: 1em;
+  background-color: #8cacac;
+  opacity: 0.4;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.new_post {
+  width: 200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logged_in {
+  font-size: 16px;
+  color: rgb(2, 63, 31);
+}
