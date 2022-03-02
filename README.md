@@ -1,6 +1,6 @@
-#MyTweeter
+# MyTweeter
 
-##Introduction
+## Introduction
 
 It is a platform to send and view all or filtered Posts based on selected dates.
 As a user:
@@ -10,69 +10,57 @@ As a user:
 3. I can create a new post.
 4. I can filter my posts based on dates.
 
-##Dependencies
+## Dependencies
 
-###Front-End:
+### Front-End:
 
-React
+`React`
 
-axios
+- axios
+- material-ui/core
+- material-ui/icons
+- moment
+- recoil
 
-material-ui/core
+### Back-End:
 
-material-ui/icons
+`Flask`
 
-moment
+- flask-cors
+- flask-sqlalchemy
+- flask-marshmallow
+- marshmallow-sqlalchemy
+- python-dotenv
 
-###Back-End:
-
-flask-cors
-
-flask-sqlalchemy
-
-flask-marshmallow
-
-marshmallow-sqlalchemy
-
-python-dotenv
-
-#Front-end Server Setup
+## Front-end Server Setup
 
 Install dependencies with
 
-cd <project-directory>
+- cd `project-directory`
+- cd client
+- npm install
 
-cd client
-
-npm install
-
-#Running Webpack Development Server
+## Running Webpack Development Server
 
 npm start
 
-#Back-end Server Setup
+## Back-end Server Setup
 
 Install dependencies with
 
-cd AretoLabs
+- cd `project directory`
+- cd backend
+- $ python3 -m venv venv
+- $ . venv/bin/activate
+- pip install -r requirements.txt
 
-cd backend
+`Set up database`
 
-$ python3 -m venv venv
+- flask db_drop (can be used if required)
+- flask db_create
+- flask db_seed
 
-$ . venv/bin/activate
-
-pip install -r requirements.txt
-
-Setu up database
-
-flask db_drop
-
-flask db_create
-
-flask db_seed
-
-#Running Webpack Development Server
+## Running Flask Development Server
 
 flask run
 
