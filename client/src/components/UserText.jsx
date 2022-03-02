@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button } from '@material-ui/core'
-import TimePicker from './DatePicker';
 import { properCase } from '../helpers/helpers';
 import { createPost, getAllPost } from "../services";
 import { now } from 'moment';
@@ -69,32 +68,32 @@ function UserText() {
   return (
     <div > 
       <div className="container">
-       <TextField 
-        label="Enter Text Message" 
-        variant="filled" color="success" 
-        focused  
-        style={{marginBottom:'1em'}}
-        onChange={handleTextChange}
-        helperText={error}
-      />
-      <TextField style={{width: '20%'}}
-        id="time"
-        label="Select Time"
-        type="time"
-        defaultValue={time}
-        value={time}
-        onChange={(e)=> setTime(e.target.value)}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+        <TextField 
+          label="Enter Text Message" 
+          variant="filled" color="success" 
+          focused  
+          style={{marginBottom:'1em'}}
+          onChange={handleTextChange}
+          helperText={error}
+        />
+        <TextField style={{width: '20%'}}
+          id="time"
+          label="Select Time"
+          type="time"
+          defaultValue={time}
+          value={time}
+          onChange={(e)=> setTime(e.target.value)}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
       </div>
       <div className="new_post">
-      <Button color="primary" variant="contained" onClick={handleClick} >
-        Post
-      </Button>
+        <Button color="primary" variant="contained" onClick={handleClick} >
+          Post
+        </Button>
       </div>
-</div>
+    </div>
   )
 }
 

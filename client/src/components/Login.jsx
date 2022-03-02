@@ -9,7 +9,7 @@ import UserText from "./UserText";
 
 function Login(props) {
   const [user, setUser] = useRecoilState(userAtom);
-  const [flag, setFlag] = useState("False")
+  const [isUser, setIsUser] = useState(false)
 
   const handleUser = (e) => {
     
@@ -19,7 +19,7 @@ function Login(props) {
        getUser(user.name)
         .then((res) => {
           setUser(prev => res);
-          setFlag("True")
+          setIsUser(true)
         })
           .catch((err) => {
             setUser({}); 
@@ -57,19 +57,19 @@ function Login(props) {
       </Box>
       </Grid>
       <Grid item>
-      <Button startIcon={<LoginIcon />} color="primary" variant="contained" onClick={handleUser}>
-        Login
-      </Button>  
+        <Button startIcon={<LoginIcon />} color="primary" variant="contained" onClick={handleUser}>
+          Login
+        </Button>  
       </Grid> 
       <Grid item>
-        { flag=='True' && <div className="logged_in">Logged in As {user.name}</div>}
+        { isUser && <div className="logged_in">Logged in As {user.name}</div>}
       </Grid>
     </Grid>
     {/* { user && <UserPosts /> } */}
     <div className="text_container">
           <UserText />
       </div>
-      {flag=='True' && <UserPosts /> } 
+      {isUser  && <UserPosts /> } 
     </>
   )
 }

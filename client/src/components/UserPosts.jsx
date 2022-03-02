@@ -13,7 +13,7 @@ function UserPosts() {
   const user = useRecoilValue(userAtom)
 
   useEffect(() => {
-    console.log("user..", user.id)
+
     return new Promise((resolve, reject) => {
       try {
         // do db call  or API endpoint axios call here and return the promise.

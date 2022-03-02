@@ -2,7 +2,7 @@ import React from "react"
 import {Grid} from '@material-ui/core'
 
 function UserPostsList(props) {
-  console.log(props);
+
   return (
     <Grid  item className='post' style={{marginBottom:'1em'}}>
       {props.post.text}   

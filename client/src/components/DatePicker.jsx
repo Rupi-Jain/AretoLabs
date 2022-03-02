@@ -1,4 +1,3 @@
-// import { TimePicker } from '@material-ui/pickers';
 import { TextField, Grid, IconButton } from '@material-ui/core'
 import DoubleArrowTwoToneIcon from '@material-ui/icons/DoubleArrowTwoTone';
 import { now } from 'moment';
@@ -37,36 +36,36 @@ function DatePicker(props) {
     <div>
       <Grid container spacing={4} justify='flex-end' justifyContent="center" alignItems="center">
         <Grid item >
-        <TextField
-          id="date"
-          label="Filter Date From"
-          type="date"
-          defaultValue={currentDate}
-          value={selectedDateFrom}
-          onChange={(e)=> setSeletedDateFrom(e.target.value)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        </Grid>
-        <Grid item>
           <TextField
             id="date"
-            label="To"
+            label="Filter Date From"
             type="date"
-            defaultValue={currentDate.getDate()}
-            value={selectedDateTo}
-            onChange={(e)=> setSeletedDateTo(e.target.value)}
+            defaultValue={currentDate}
+            value={selectedDateFrom}
+            onChange={(e)=> setSeletedDateFrom(e.target.value)}
             InputLabelProps={{
               shrink: true,
             }}
           />
-        </Grid>
-        <grid item>
+          </Grid>
+          <Grid item>
+            <TextField
+              id="date"
+              label="To"
+              type="date"
+              defaultValue={currentDate.getDate()}
+              value={selectedDateTo}
+              onChange={(e)=> setSeletedDateTo(e.target.value)}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+        <Grid item>
           <IconButton  onClick={handlePosts} >
             <DoubleArrowTwoToneIcon fontSize="large"  />    
-        </IconButton>    
-        </grid>
+          </IconButton>    
+        </Grid>
       </Grid>
     </div>
   )
