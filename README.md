@@ -50,8 +50,7 @@ Install dependencies with
 
 - cd `project directory`
 - cd backend
-- $ python3 -m venv venv
-- $ . venv/bin/activate
+- pipenv shell (install pipenv if not already installed using pip3 install pipenv)
 - pip install -r requirements.txt
 
 `Set up database`
