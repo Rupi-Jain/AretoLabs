@@ -22,3 +22,8 @@ export const dateTo = atom({
   key: "date_to",
   default: date,
 })
+
+export const postDisabled = atom({
+  key: "post_enabled",
+  default: "true",
+})

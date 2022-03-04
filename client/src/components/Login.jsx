@@ -3,16 +3,17 @@ import {Grid, Button, TextField, Box} from '@material-ui/core'
 import LoginIcon from '@material-ui/icons/AccountCircle';
 import { getUser } from '../services';
 import { atom, useRecoilState } from 'recoil'
-import { user as userAtom} from '../recoil/atom'
+import { user as userAtom, postDisabled as postDisabledAtom} from '../recoil/atom'
 import UserPosts from "./UserPosts";
 import UserText from "./UserText";
 
 function Login(props) {
   const [user, setUser] = useRecoilState(userAtom);
+  const [postDisabled, setPostDisabled] = useRecoilState(postDisabledAtom);
   const [isUser, setIsUser] = useState(false)
 
   const handleUser = (e) => {
-    
+   
     return new Promise((resolve, reject) => {
       try {
         // do db call  or API endpoint axios call here and return the promise.
@@ -20,6 +21,7 @@ function Login(props) {
         .then((res) => {
           setUser(prev => res);
           setIsUser(true)
+          setPostDisabled("")
         })
           .catch((err) => {
             setUser({}); 

@@ -4,16 +4,17 @@ import { properCase } from '../helpers/helpers';
 import { createPost, getAllPost } from "../services";
 import { now } from 'moment';
 import { atom, useRecoilState, useRecoilValue } from 'recoil'
-import { user as userAtom, userPost as userPostAtom} from '../recoil/atom'
+import { user as userAtom, userPost as userPostAtom, postDisabled as postDisabledAtom} from '../recoil/atom'
 
-function UserText() {
+function UserText(props) {
    const [text, setText] = useState('');
    const [time, setTime] = useState('');
    const [error, setError] = useState('')
    const user = useRecoilValue(userAtom)
+   const postDisabled = useRecoilValue(postDisabledAtom)
    const [posts, setPosts] = useRecoilState(userPostAtom);
-
   
+
   const handleTextChange = (e) => {
     setError("")
     setText(prev => e.target.value)
@@ -21,6 +22,8 @@ function UserText() {
   
 
   const handleClick = () => {
+
+    if (!user.id) return;
     
     if(text === "") {
       setError("You can't leave Post Blank")
@@ -89,7 +92,7 @@ function UserText() {
         />
       </div>
       <div className="new_post">
-        <Button color="primary" variant="contained" onClick={handleClick} >
+        <Button color="primary" variant="contained" onClick={handleClick} disabled={postDisabled} >
           Post
         </Button>
       </div>
